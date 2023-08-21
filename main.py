@@ -9,6 +9,7 @@ import random
 from random import choice
 from argparse import ArgumentParser
 from pathlib import Path
+import time
 
 from simple_cnn import SimpleCNN
 from run_lib import train, test, prepare_data, figure_to_array
@@ -109,3 +110,6 @@ fig = figure_to_array(fig)
 writer.add_image("best/conv2", fig, global_step=best_step)
 
 writer.close()
+
+# wait for the writer's job finished
+time.sleep(10)
